@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>SPOTIFY</title>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <img src="assets/images/logo.svg" alt="logo" class="logo invert">
+            <img src="assets/images/home.svg" alt="home" class="home invert">
+            <div class="box">
+                <span>
+                    <input type="text" name="search" id="search" class="search" placeholder="What do you want to play?">
+                    <img src="assets/images/search.svg" alt="search" class="sear invert">
+                    <div class="bar">
+                        <img src="assets/images/browse.svg" alt="bro" class="bro invert">
+                    </div>
+                </span>
+                <ul>
+                    <li>Premium</li>
+                    <li>Support</li>
+                    <li>Download</li>
+                </ul>
+            </div>
+            <div class="box1">
+                <div class="dd0">
+                    <img src="assets/images/dd.svg" alt="dd" class="dd invert">
+                    Install App
+                </div>
+                <div><a href="music.html">Sign up</a></div>
+                <button id="sign" type="submit" class=" btn1 btn-sm"> Log in</button>
+            </div>
+        </nav>
+        <div class="container flex">
+            <div class="left ">
+                <!-- <div class="home"></div> -->
+                <div class="lib">
+                    Your Library
+                    <button type="button" id="add" class="plus"><img src="assets/images/plus.svg" alt="plus"
+                            class="invert plus1"></button>
+                </div>
+                <div class="ib">
+                    <div class="ib1 c1">
+                        <p>Create your first playlist</p>
+                        <p>It's easy,we'll help you</p>
+                        <button type="submit" class="btn2">Create playlist</button>
+                    </div>
+                    <div class="ib2 c1">
+                        <p>Lets's find some podcast to follow</p>
+                        <p>We'll keep you updated on new episodes</p>
+                        <button type="submit" class="btn2">Browse podcasts</button>
+                    </div>
+                </div>
+                <div class="footer0">
+                    <div class="f1">Legal</div>
+                    <div class="f1">Safety & Privacy Center</div>
+                    <div class="f1">Privay Policy</div>
+                    <div class="f1">Cookies</div>
+                    <div class="f1">About Ads</div>
+                    <div class="f1">Accessibility</div>
+                </div>
+                <div class="cookie">
+                    Cookies
+                </div>
+                <div><button id="languagebtn" type="button" class="lang invert"><img src="assets/images/globe.svg"
+                            alt="globe"><span id="currentlang">English</span></button></div>
+                <div class="modal-overlay" id="modaloverlay">
+                    <div class="modal">
+                        <div class="modal-header">
+                            <div>
+                                <h2 id="modal-title">Choose a language</h2>
+                                <p id="modal-subtitle">This updates what you read on open.spotify.com</p>
+                            </div>
+                            <button type="button" class="close-btn" id="closebtn">&times;</button>
+                        </div>
+                        <div id="languagesgrid" class="languages-grid"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right ">
+                <h1><a href="trending songs">Trending songs</a></h1>
+                <div class="cardcont">
+                    <div class="card">
+                        <img src="assets/images/SHERIYA.jpg" alt="sheriya">
+                        <a href="">SHERIYA</a>
+                        <p>ARJN,KDS,RONN</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/LOKAH.jpg" alt="sheriya">
+                        <a href="">Thani Loka Murakari</a>
+                        <p>Jakes Bejoy,Jyoti Nooran,Reble</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/KFORKABA.jpg" alt="sheriya">
+                        <a href="">K For Kabaradakam</a>
+                        <p>Ankit Menon</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/AVK.jpg" alt="sheriya">
+                        <a href="">Angu vaana Konilu</a>
+                        <p>Vaikom Vijayalakshmi</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/MATSKA.jpg" alt="sheriya">
+                        <a href="">Matushka</a>
+                        <p>satirin</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/APNA.jpg" alt="sheriya">
+                        <a href="">Apna Bana Le</a>
+                        <p>Sachin-Jigar</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                </div>
+                <h1><a href="art">Popular artists</a></h1>
+                <div class="cardcont">
+                    <div class="card1">
+                        <img src="assets/images/ani.jpg" alt="ani">
+                        <a href="">Anirudh Ravichandher</a>
+                        <p>Artist</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card1">
+                        <img src="https://i.scdn.co/image/ab67616100005174cb6926f44f620555ba444fca" alt="ani">
+                        <a href="">Pritm</a>
+                        <p>Artist</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card1">
+                        <img src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c" alt="ani">
+                        <a href="">A.R.Rahman</a>
+                        <p>Artist</p> <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card1">
+                        <img src="https://i.scdn.co/image/ab676161000051745ba2d75eb08a2d672f9b69b7" alt="ani">
+                        <a href="">Arjit Singh</a>
+                        <p>Artist</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card1">
+                        <img src="https://i.scdn.co/image/ab676161000051748de0e6e7e55d7773931ab7f4" alt="ani">
+                        <a href="">Udit Narayan</a>
+                        <p>Artist</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card1">
+                        <img src="https://i.scdn.co/image/ab67616100005174c40600e02356cc86f0debe84" alt="ani">
+                        <a href="">
+                            <pre> Atif Aslam</pre>
+                        </a>
+                        <p>Artist</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                </div>
+                <h1><a href="pop">Popular Albums And Singles</a></h1>
+                <div class="cardcont">
+                    <div class="card2">
+                        <img src="assets/images/arj.jpg" alt="arj">
+                        <a href="">ULtimate Love Songs</a>
+                        <p>Arjit Singh</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card2">
+                        <img src="https://i.scdn.co/image/ab67616d00001e026404721c1943d5069f0805f3" alt="arj">
+                        <a href="">Aashiqui</a>
+                        <p>Mithoon</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card2">
+                        <img src="	https://i.scdn.co/image/ab67616d00001e02707ea5b8023ac77d31756ed4" alt="arj">
+                        <a href="">Yeh Jawaani Hai Deewani</a>
+                        <p>Pritm</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card2">
+                        <img src="https://i.scdn.co/image/ab67616d00001e0283141000ee8ce3b893a0b425" alt="arj">
+                        <a href="">Finding her</a>
+                        <p>Kushagra</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card2">
+                        <img src="https://i.scdn.co/image/ab67616d00001e02773c5f60bcb309ef8802e4ef" alt="arj">
+                        <a href="">Raanjan</a>
+                        <p>Arjit Singh</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card2">
+                        <img src="	https://i.scdn.co/image/ab67616d00001e02bb25239324c4e16ae01fda36" alt="arj">
+                        <a href="">Making Memories</a>
+                        <p>Karan Aujla</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                </div>
+                <h1><a href="popu">Popular Radio</a></h1>
+                <div class="cardcont">
+                    <div class="card3">
+                        <img src="assets/images/arr.jpg" alt="ar rahman">
+                        <p>with Hariharan,Anirudh Ravichandher</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card3">
+                        <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4YRxDV8wJFPHPTeXepOstw/en-GB"
+                            alt="ar rahman">
+                        <p>with Jeet Ganghuli,Pritm</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card3">
+                        <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4fEkbug6kZzzJ8eYX6Kbbp/en-GB"
+                            alt="ar rahman">
+                        <p>with Pritm,Mustafa Zahid</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card3">
+                        <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0oOet2f43PA68X5RxKobEy/en"
+                            alt="ar rahman">
+                        <p>with A.R.Rahman,Atif Aslam</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card3">
+                        <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/3gBKY0y3dFFVRqicLnVZYz/en"
+                            alt="ar rahman">
+                        <p>with Vinod Rathod,Kumar Sanu</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="card3">
+                        <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/2FKWNmZWDBZR4dE5KX4plR/en"
+                            alt="ar rahman">
+                        <p>with Shubh,Karan Aujla</p>
+                        <button><svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 24 24">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg></button>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <div class="footer1">
+                        <div class="det">
+                            <p>Company</p>
+                            <a href="sm">About</a>
+                            <a href="sm">Jobs</a>
+                            <a href="sm">For the Record</a>
+                        </div>
+                        <div class="det">
+                            <p>Communities</p>
+                            <a href="sm">For Artists</a>
+                            <a href="sm">Developers</a>
+                            <a href="sm">Advertising</a>
+                            <a href="sm">Investors</a>
+                            <a href="sm">Vendors</a>
+                        </div>
+                        <div class="det">
+                            <p>Useful links</p>
+                            <a href="sm">Support</a>
+                            <a href="sm">Free Mobile App</a>
+                            <a href="sm">Popular by Country</a>
+                            <a href="sm">Import your music</a>
+                        </div>
+                        <div class="det">
+                            <p>Spotify Plans</p>
+                            <a href="sm">Premium Individual</a>
+                            <a href="sm">Premium Duo</a>
+                            <a href="sm">Premium Family</a>
+                            <a href="sm">Premium Student</a>
+                            <a href="sm">Spotify Free</a>
+                        </div>
+                    </div>
+                    <div class="logos invert">
+                        <button type="button">
+                            <svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 16 16"
+                                style="--encore-icon-fill: var(--text-base, #000000); --encore-icon-height: var(--encore-graphic-size-decorative-smaller); --encore-icon-width: var(--encore-graphic-size-decorative-smaller);">
+                                <path
+                                    d="M8 1.44c2.136 0 2.389.009 3.233.047.78.036 1.203.166 1.485.276.348.128.663.332.921.598.266.258.47.573.599.921.11.282.24.706.275 1.485.039.844.047 1.097.047 3.233s-.008 2.389-.047 3.232c-.035.78-.166 1.204-.275 1.486a2.65 2.65 0 0 1-1.518 1.518c-.282.11-.706.24-1.486.275-.843.039-1.097.047-3.233.047s-2.39-.008-3.232-.047c-.78-.035-1.204-.165-1.486-.275a2.5 2.5 0 0 1-.921-.599 2.5 2.5 0 0 1-.599-.92c-.11-.282-.24-.706-.275-1.486-.038-.844-.047-1.096-.047-3.232s.009-2.39.047-3.233c.036-.78.166-1.203.275-1.485.129-.348.333-.663.599-.921a2.5 2.5 0 0 1 .92-.599c.283-.11.707-.24 1.487-.275.843-.038 1.096-.047 3.232-.047L8 1.441zm.001-1.442c-2.172 0-2.445.01-3.298.048-.854.04-1.435.176-1.943.373a3.9 3.9 0 0 0-1.417.923c-.407.4-.722.883-.923 1.417-.198.508-.333 1.09-.372 1.942S0 5.826 0 8c0 2.172.01 2.445.048 3.298.04.853.174 1.433.372 1.941.2.534.516 1.017.923 1.417.4.407.883.722 1.417.923.508.198 1.09.333 1.942.372s1.126.048 3.299.048 2.445-.01 3.298-.048c.853-.04 1.433-.174 1.94-.372a4.1 4.1 0 0 0 2.34-2.34c.199-.508.334-1.09.373-1.942S16 10.172 16 7.999s-.01-2.445-.048-3.298c-.04-.853-.174-1.433-.372-1.94a3.9 3.9 0 0 0-.923-1.418A3.9 3.9 0 0 0 13.24.42c-.508-.197-1.09-.333-1.942-.371-.851-.041-1.125-.05-3.298-.05z">
+                                </path>
+                                <path
+                                    d="M8 3.892a4.108 4.108 0 1 0 0 8.216 4.108 4.108 0 0 0 0-8.216m0 6.775a2.668 2.668 0 1 1 0-5.335 2.668 2.668 0 0 1 0 5.335m4.27-5.978a.96.96 0 1 0 0-1.92.96.96 0 0 0 0 1.92">
+                                </path>
+                            </svg>
+                        </button>
+                        <button type="button">
+                            <svg data-encore-id="icon" role="img" aria-hidden="true"
+                                class="e-91000-icon e-91000-baseline" viewBox="0 0 16 16"
+                                style="--encore-icon-fill: var(--text-base, #000000); --encore-icon-height: var(--encore-graphic-size-decorative-smaller); --encore-icon-width: var(--encore-graphic-size-decorative-smaller);">
+                                <path
+                                    d="M13.54 3.889a2.97 2.97 0 0 0 1.333-1.683 6 6 0 0 1-1.929.738 3 3 0 0 0-.996-.706 3 3 0 0 0-1.218-.254 2.92 2.92 0 0 0-2.143.889 2.93 2.93 0 0 0-.889 2.15q0 .318.08.691a8.5 8.5 0 0 1-3.484-.932A8.5 8.5 0 0 1 1.532 2.54a3 3 0 0 0-.413 1.523q0 .778.361 1.445.36.668.988 1.08a2.9 2.9 0 0 1-1.373-.374v.04q0 1.088.69 1.92a2.97 2.97 0 0 0 1.739 1.048 2.94 2.94 0 0 1-1.365.056 2.94 2.94 0 0 0 1.063 1.5 2.95 2.95 0 0 0 1.77.603 5.94 5.94 0 0 1-3.77 1.302q-.365 0-.722-.048A8.4 8.4 0 0 0 5.15 14q1.358 0 2.572-.361 1.215-.36 2.147-.988a9 9 0 0 0 1.683-1.46q.75-.834 1.234-1.798a9.5 9.5 0 0 0 .738-1.988 8.4 8.4 0 0 0 .246-2.429 6.2 6.2 0 0 0 1.508-1.563q-.84.373-1.738.476">
+                                </path>
+                            </svg>
+                        </button>
+                        <button type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                color="#000000" fill="none">
+                                <path
+                                    d="M4.5 9.5H4C3.05719 9.5 2.58579 9.5 2.29289 9.79289C2 10.0858 2 10.5572 2 11.5V20C2 20.9428 2 21.4142 2.29289 21.7071C2.58579 22 3.05719 22 4 22H4.5C5.44281 22 5.91421 22 6.20711 21.7071C6.5 21.4142 6.5 20.9428 6.5 20V11.5C6.5 10.5572 6.5 10.0858 6.20711 9.79289C5.91421 9.5 5.44281 9.5 4.5 9.5Z"
+                                    stroke="#141B34" stroke-width="1.5" />
+                                <path
+                                    d="M6.5 4.25C6.5 5.49264 5.49264 6.5 4.25 6.5C3.00736 6.5 2 5.49264 2 4.25C2 3.00736 3.00736 2 4.25 2C5.49264 2 6.5 3.00736 6.5 4.25Z"
+                                    stroke="#141B34" stroke-width="1.5" />
+                                <path
+                                    d="M12.326 9.5H11.5C10.5572 9.5 10.0858 9.5 9.79289 9.79289C9.5 10.0858 9.5 10.5572 9.5 11.5V20C9.5 20.9428 9.5 21.4142 9.79289 21.7071C10.0858 22 10.5572 22 11.5 22H12C12.9428 22 13.4142 22 13.7071 21.7071C14 21.4142 14 20.9428 14 20L14.0001 16.5001C14.0001 14.8433 14.5281 13.5001 16.0879 13.5001C16.8677 13.5001 17.5 14.1717 17.5 15.0001V19.5001C17.5 20.4429 17.5 20.9143 17.7929 21.2072C18.0857 21.5001 18.5572 21.5001 19.5 21.5001H19.9987C20.9413 21.5001 21.4126 21.5001 21.7055 21.2073C21.9984 20.9145 21.9985 20.4432 21.9987 19.5006L22.0001 14.0002C22.0001 11.515 19.6364 9.50024 17.2968 9.50024C15.9649 9.50024 14.7767 10.1531 14.0001 11.174C14 10.5439 14 10.2289 13.8632 9.995C13.7765 9.84686 13.6531 9.72353 13.505 9.63687C13.2711 9.5 12.9561 9.5 12.326 9.5Z"
+                                    stroke="#141B34" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="sankar">
+                    <a href="">&copy;SANKAR ONLY</a>
+                </div>
+            </div>
+        </div>
+        <div class="pre">
+            <div>
+                <p>Preview of Spotify</p>
+                <p>Sign up to get unlimited songs and podcasts with occasional ads.No credit card needed.</p>
+            </div>
+            <button type="button" id="suf" class="btn1">Sign up free</button>
+        </div>
+    </main>
+<script src="script.js"></script>
+</body>
+
+</html>
