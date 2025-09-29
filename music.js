@@ -102,49 +102,100 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-async function getsongs() {
-    let a = await fetch("/assets/songs/");
-    let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
-    let songs = [];
+// async function getsongs() {
+//     let a = await fetch("/assets/songs/");
+//     let response = await a.text();
+//     let div = document.createElement("div");
+//     div.innerHTML = response;
+//     let as = div.getElementsByTagName("a");
+//     let songs = [];
 
-    // 💡 FIX: The song names have been cleaned to use standard characters
-    // This ensures they will match the text read from the HTML cards.
+//     // 💡 FIX: The song names have been cleaned to use standard characters
+//     // This ensures they will match the text read from the HTML cards.
+//     const songDetails = [
+//         { name: "Angu Vaana Konilu", artist: "Vaikom Vijayalakshmi", image: "assets/images/AVK.jpg" },
+//         { name: "Apna Bana Le", artist: "Sachin-Jigar", image: "assets/images/APNA.jpg" },
+//         { name: "K For Kabaradakkam", artist: "Ankit Menon", image: "assets/images/KFORKABA.jpg" },
+//         { name: "M𝚊𝚝𝚞𝚜𝚑𝚔𝚊  U𝚕𝚝𝚛𝚊𝚏𝚞𝚗𝚔", artist: "satirin", image: "assets/images/MATSKA.jpg" }, // Corrected characters and spacing
+//         { name: "SHERIYA", artist: "ARJN,KDS,RONN", image: "assets/images/SHERIYA.jpg" },
+//         { name: "Thani Lokah Murakkaari", artist: "Jakes Bejoy,Jyoti Nooran,Reble", image: "assets/images/LOKAH.jpg" }
+//     ];
+
+//     for (let i = 0; i < as.length; i++) {
+//         const element = as[i];
+//         if (element.href.endsWith(".mp3")) {
+//             const rawPath = decodeURIComponent(element.href);
+//             const justTheFilename = rawPath.split('\\').pop().split('/').pop();
+//             const songTitleFromUrl = justTheFilename.replace(".mp3", "").trim();
+
+//             // This comparison logic is correct, but it needed clean data to work with.
+//             let foundDetails = songDetails.find(detail => detail.name.toLowerCase() === songTitleFromUrl.toLowerCase());
+
+//             const details = foundDetails || {
+//                 name: songTitleFromUrl,
+//                 artist: "Unknown Artist",
+//                 image: "assets/images/default-cover.jpg"
+//             };
+            
+//             songs.push({
+//                 url: element.href,
+//                 name: details.name,
+//                 artist: details.artist,
+//                 image: details.image
+//             });
+//         }
+//     }
+//     return songs;
+// }
+async function getsongs() {
+    // This array now acts as our reliable source of truth.
+    // The names must EXACTLY match your actual file names in GitHub.
+    const songFileNames = [
+        "Angu Vaana Konilu.mp3",
+        "Apna Bana Le.mp3",
+        "K For Kabaradakkam.mp3",
+        "M𝚊𝚝𝚞𝚜𝚑𝚔𝚊  U𝚕𝚝𝚛𝚊𝚏𝚞𝚗𝚔.mp3", // Assuming this is the real file name
+        "SHERIYA.mp3",
+        "Thani Lokah Murakkaari.mp3"
+    ];
+
     const songDetails = [
         { name: "Angu Vaana Konilu", artist: "Vaikom Vijayalakshmi", image: "assets/images/AVK.jpg" },
         { name: "Apna Bana Le", artist: "Sachin-Jigar", image: "assets/images/APNA.jpg" },
         { name: "K For Kabaradakkam", artist: "Ankit Menon", image: "assets/images/KFORKABA.jpg" },
-        { name: "M𝚊𝚝𝚞𝚜𝚑𝚔𝚊  U𝚕𝚝𝚛𝚊𝚏𝚞𝚗𝚔", artist: "satirin", image: "assets/images/MATSKA.jpg" }, // Corrected characters and spacing
+        { name: "M𝚊𝚝𝚞𝚜𝚑𝚔𝚊  U𝚕𝚝𝚛𝚊𝚏𝚞𝚗𝚔", artist: "satirin", image: "assets/images/MATSKA.jpg" },
         { name: "SHERIYA", artist: "ARJN,KDS,RONN", image: "assets/images/SHERIYA.jpg" },
         { name: "Thani Lokah Murakkaari", artist: "Jakes Bejoy,Jyoti Nooran,Reble", image: "assets/images/LOKAH.jpg" }
     ];
 
-    for (let i = 0; i < as.length; i++) {
-        const element = as[i];
-        if (element.href.endsWith(".mp3")) {
-            const rawPath = decodeURIComponent(element.href);
-            const justTheFilename = rawPath.split('\\').pop().split('/').pop();
-            const songTitleFromUrl = justTheFilename.replace(".mp3", "").trim();
+    let songs = [];
+    
+    // We now loop through our predefined list of filenames.
+    for (const filename of songFileNames) {
+        
+        // Construct the full, correct URL for each song.
+        const songUrl = `/assets/songs/${filename}`;
+        
+        // Remove the ".mp3" to get a clean title for searching.
+        const songTitle = filename.replace(".mp3", "").trim();
 
-            // This comparison logic is correct, but it needed clean data to work with.
-            let foundDetails = songDetails.find(detail => detail.name.toLowerCase() === songTitleFromUrl.toLowerCase());
-
-            const details = foundDetails || {
-                name: songTitleFromUrl,
-                artist: "Unknown Artist",
-                image: "assets/images/default-cover.jpg"
-            };
-            
-            songs.push({
-                url: element.href,
-                name: details.name,
-                artist: details.artist,
-                image: details.image
-            });
-        }
+        // Find the matching details (this logic is still perfect).
+        let foundDetails = songDetails.find(detail => detail.name.toLowerCase() === songTitle.toLowerCase());
+        
+        const details = foundDetails || {
+            name: songTitle,
+            artist: "Unknown Artist",
+            image: "assets/images/default-cover.jpg"
+        };
+        
+        songs.push({
+            url: songUrl,
+            name: details.name,
+            artist: details.artist,
+            image: details.image
+        });
     }
+
     return songs;
 }
 
