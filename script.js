@@ -51,6 +51,7 @@ function init() {
             closemodal();
         }
     });
+    initHamburgerMenus();
 }
 function createlanguageoptions() {
     languagesgrid.innerHTML = '';
@@ -110,5 +111,43 @@ const suf=document.getElementById("suf");
 suf.addEventListener('click',()=>{
     window.location.href="music.html";
 });
+
+function initHamburgerMenus() {
+    // Left side hamburger
+    const leftHamburger = document.querySelector('.hm button');
+    const leftPanel = document.querySelector('.left');
+    
+    leftHamburger?.addEventListener('click', () => {
+        leftPanel.style.left = leftPanel.style.left === '0px' ? '-100%' : '0px';
+    });
+
+    // Nav hamburger
+    const navHamburger = document.querySelector('.hm1 button');
+    const navMenu = document.querySelector('.hm2');
+    
+    navHamburger?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.style.display = 'flex';
+        // Toggle the active class which triggers the transition
+        if (navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            navMenu.style.right = '-100%';
+        } else {
+            navMenu.classList.add('active');
+            navMenu.style.right = '0';
+        }
+    });
+
+    // Close menus when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.hm') && !e.target.closest('.left')) {
+            leftPanel.style.left = '-100%';
+        }
+        if (!e.target.closest('.hm1') && !e.target.closest('.hm2')) {
+            navMenu.classList.remove('active');
+            navMenu.style.right = '-100%';
+        }
+    });
+}
 
 init();

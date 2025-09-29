@@ -13,9 +13,37 @@ body {
 
 .left {
     width: 27vw;
-    /* position: fixed; */
+    position: static;
+    /* left: -100%; */
+    transition: left 0.3s ease-in-out;
+    z-index: 1;
+    background: black;
+    height: 80vh;
+}
+.hm{
+    display:none;
+}
+.hm1{
+    display:none;
+}
+.hm2 {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    position: fixed;
+    z-index: 1000;
+    right: -100%;
+    top: 0;
+    background: black;
+    padding: 20px;
+    height: 100vh;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
 }
 
+.hm2.active {
+    display: none;
+    right: 0;
+}
 .border {
     border: 2px solid red;
     margin: 3px;
@@ -275,7 +303,9 @@ a {
 .card:hover {
     background-color: rgb(28, 28, 28);
 }
-
+.container{
+    height:80vh;
+}
 .right {
     width: 73vw;
     overflow-y: hidden;
@@ -283,7 +313,12 @@ a {
     height: 80vh;
     position: relative;
 }
-
+.cont1{
+    overflow-y: hidden;
+}
+.cont1:hover{
+    overflow-y: scroll;
+}
 .right:hover {
     overflow-y: scroll;
     overflow-x: scroll;
@@ -578,7 +613,17 @@ a {
 .right::-webkit-scrollbar-corner {
     background: #000000;
 }
+.cont1::-webkit-scrollbar {
+    background: #000000;
+}
 
+.cont1::-webkit-scrollbar-thumb {
+    background: #88888855;
+}
+
+.cont1::-webkit-scrollbar-corner {
+    background: #000000;
+}
 .modal-overlay {
     position: fixed;
     top: 25px;
@@ -680,31 +725,35 @@ a {
     color: #b3b3b3;
 }
 .pb{
-    position: absolute;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     border: 1px solid rgb(0, 0, 0);
-    background-color: #282828;
-    width:99%;
+    background-color: #181818;
+    width: 99%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding-block: 10px;
-    gap:30px;
-    border-radius: 10px;
+    padding: 10px 20px;
+    gap: 20px;
+    border-radius: 0;
+    z-index: 1001;
+    flex-wrap: wrap;
 }
 .btns{
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 .sbar {
-    width: 70%;
-    position: absolute;
-    bottom: 10px;
-    border: 2px solid rgb(232, 232, 232);
+    flex-grow: 1;
+    position: relative;
+    bottom: auto;
+    border: 2px solid #535353;
     border-radius: 10px;
-    height: 3px;
-    background: transparent;
-    overflow: hidden;  /* Add this to contain the progress */
+    height: 4px;
+    background: #535353;
+    overflow: hidden;
 }
 
 /* Add new progress bar style */
@@ -713,8 +762,8 @@ a {
     left: 0;
     top: 0;
     height: 100%;
-    background-color: rgb(232, 232, 232);
-    width: 0%;  /* Initially 0, will be updated by JS */
+    background-color: white;
+    width: 0%;
     transition: width 0.1s linear;
 }
 
@@ -724,7 +773,6 @@ a {
     gap: 12px;
     min-width: 180px;
 }
-
 .sinfo img {
     width: 56px;
     height: 56px;
@@ -747,4 +795,140 @@ a {
 #current-artist-name {
     color: #b3b3b3;
     font-size: 12px;
+}
+@media (max-width:600px){
+    .c1 {
+    width: 300px;
+    height: 150px;
+    background-color: rgb(31, 30, 30);
+    margin-top: 20px;
+}
+
+.c1 p {
+    padding-top: 15px;
+    padding-left: 18px;
+}
+.container{
+    height: 90vh;
+}
+.footer1 {
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+}
+
+@media (max-width:1400px){
+    .box{
+        display: none;
+        position: absolute;
+        right:-100%;
+        transition: all 1s;
+    }
+    .box1{
+        display:none;
+        position: absolute;
+        right:-100%;
+        transition: all 1s;
+    }
+    .hm1{
+        display:flex;
+        justify-content: end;
+        position: absolute;
+        right:3px;
+    }
+    .hm1 button{
+        border: none;
+    }
+    .hm1 svg{
+        width:40px;
+    }
+    .hm2 {
+        display: none; /* Keep it hidden by default */
+    }
+
+    .hm2.active {
+        display: flex; /* Show when active */
+        right: 0;
+    }
+
+    /* Show the box and box1 inside hm2 when active */
+    .hm2 .box,
+    .hm2 .box1 {
+        display: flex;
+        position: static;
+        right: auto;
+        flex-direction: column;
+        gap:30px;
+        width: 200px;
+    }
+    .hm2 .box ul{
+        flex-direction: column;
+    }
+    .dd0 {
+    padding-left: 0px;
+    border: none;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.search {
+    position: relative;
+    width: 200px;
+    padding: 10px 10px 10px 35px;
+    border-radius: 30px;
+    background-color: rgb(24, 24, 24);
+    border: none;
+}
+.sear {
+    width: 25px;
+    position: absolute;
+    top: 26px;
+    left: 25px;
+}
+.dd {
+    width: 18px;
+    position: absolute;
+    top: 174px;
+    left: 50px;
+}
+    .left{
+        position:absolute;
+        left:-100%;
+        transition: all 1s;
+        z-index: 1;
+        width:350px;
+    }
+    .plus1 {
+    width: 15px;
+    position: absolute;
+    top: -10px;
+    left: 170px;
+    cursor: pointer;
+}
+.footer0{
+    flex-wrap: wrap;
+    width:200px;
+}
+    .right{
+        width:100vw;
+
+    }
+    .hm{
+        display:flex;
+        height: 80vh;
+
+    }
+    .hm button{
+        border: none;
+        width:40px;
+    }
+    .hm button svg{
+        width:30px;
+    }
+    .hm button:hover,
+    .hm1 button:hover {
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
 }

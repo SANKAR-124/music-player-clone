@@ -13,7 +13,37 @@ body {
 
 .left {
     width: 27vw;
-    /* position: fixed; */
+    position: static;
+    /* left: -100%; */
+    transition: left 0.3s ease-in-out;
+    z-index: 1;
+    background: black;
+    height: 80vh;
+    
+}
+.hm{
+    display:none;
+}
+.hm1{
+    display:none;
+}
+.hm2 {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1000;
+    right: -100%;
+    top: 0;
+    background: black;
+    padding: 20px;
+    height: 80vh;
+    width: 300px;
+    transition: right 0.3s ease-in-out;
+}
+
+.hm2.active {
+    display: none;
+    right: 0;
 }
 
 .border {
@@ -252,6 +282,7 @@ main ul {
     /* background-color:-webkit-gradient(linear, left top, right top, from(#af2896), to(#509bf5)); */
     background-image: linear-gradient(90deg, #af2896, #509bf5);
     cursor: pointer;
+    height: auto;
 }
 
 .pre p {
@@ -282,15 +313,22 @@ a {
 .card:hover {
     background-color: rgb(28, 28, 28);
 }
-
+.container{
+    height:80vh;
+}
 .right {
-    width: 73vw;
+    width: 72vw;
     overflow-y: hidden;
     overflow-x: hidden;
     height: 80vh;
     position: relative;
 }
-
+.cont1{
+    overflow-y: hidden;
+}
+.cont1:hover{
+    overflow-y: scroll;
+}
 .right:hover {
     overflow-y: scroll;
     overflow-x: scroll;
@@ -585,6 +623,17 @@ a {
 .right::-webkit-scrollbar-corner {
     background: #000000;
 }
+.cont1::-webkit-scrollbar {
+    background: #000000;
+}
+
+.cont1::-webkit-scrollbar-thumb {
+    background: #88888855;
+}
+
+.cont1::-webkit-scrollbar-corner {
+    background: #000000;
+}
 
 .modal-overlay {
     position: fixed;
@@ -685,4 +734,143 @@ a {
 }
 .language-english{
     color: #b3b3b3;
+}
+@media (max-width:600px){
+    .c1 {
+    width: 300px;
+    height: 150px;
+    background-color: rgb(31, 30, 30);
+    margin-top: 20px;
+}
+
+.c1 p {
+    padding-top: 15px;
+    padding-left: 18px;
+}
+.container{
+    height: 90vh;
+}
+.footer1 {
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+}
+
+@media (max-width:1400px){
+    .box{
+        display: none;
+        position: absolute;
+        right:-100%;
+        transition: all 1s;
+    }
+    .box1{
+        display:none;
+        position: absolute;
+        right:-100%;
+        transition: all 1s;
+    }
+    .hm1{
+        display:flex;
+        justify-content: end;
+        position: absolute;
+        right:3px;
+    }
+    .hm1 button{
+        border: none;
+    }
+    .hm1 svg{
+        width:40px;
+    }
+    .hm2 {
+        display: flex; /* Change to flex */
+        right: -100%; /* Start offscreen */
+    }
+
+    .hm2.active {
+        right: 0; /* Slide in from right */
+    }
+
+    /* Show the box and box1 inside hm2 when active */
+    .hm2 .box,
+    .hm2 .box1 {
+        display: flex;
+        position: static;
+        right: auto;
+        flex-direction: column;
+        gap:30px;
+        width: 200px;
+    }
+    .hm2 .box ul{
+        flex-direction: column;
+    }
+    .dd0 {
+    padding-left: 0px;
+    border: none;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.search {
+    position: relative;
+    width: 200px;
+    padding: 10px 10px 10px 35px;
+    border-radius: 30px;
+    background-color: rgb(24, 24, 24);
+    border: none;
+}
+.sear {
+    width: 25px;
+    position: absolute;
+    top: 26px;
+    left: 25px;
+}
+.dd {
+    width: 18px;
+    position: absolute;
+    top: 174px;
+    left: 50px;
+}
+    .left{
+        position:absolute;
+        left:-100%;
+        transition: all 1s;
+        z-index: 1;
+        width:350px;
+    }
+    .plus1 {
+    width: 15px;
+    position: absolute;
+    top: -10px;
+    left: 170px;
+    cursor: pointer;
+}
+.footer0{
+    flex-wrap: wrap;
+    width:200px;
+}
+    .right{
+        width:100vw;
+
+    }
+    .pre{
+
+    }
+    .hm{
+        display:flex;
+        height: 80vh;
+
+    }
+    .hm button{
+        border: none;
+        width:40px;
+    }
+    .hm button svg{
+        width:30px;
+    }
+    .hm button:hover,
+    .hm1 button:hover {
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
 }
